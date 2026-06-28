@@ -30,11 +30,10 @@ public class KeyboardAndUSBPrices {
     }
 
     public Integer getMostExpensive() {
-        Integer keyboardPrice = keyboardPrices.min(keyboardPrices.getList());
-        Integer usbPrice = usbPrices.min(usbPrices.getList());
-        while (keyboardPrice + usbPrice > budget) {
-            keyboardPrice = keyboardPrices.min(keyboardPrices.getList());
-            usbPrice = usbPrices.min(usbPrices.getList());
+        Integer keyboardPrice = keyboardPrices.getMin();
+        Integer usbPrice = usbPrices.getMin();
+        while(keyboardPrice + usbPrice < budget) {
+            
         }
         return keyboardPrice + usbPrice;
     }
