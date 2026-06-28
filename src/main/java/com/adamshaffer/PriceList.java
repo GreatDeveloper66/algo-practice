@@ -40,6 +40,12 @@ public class PriceList implements ListCalculationsInterface {
         return min;
     }
 
+    public Integer getMin() {
+        return min(list);
+    }
+
+
+
     //implement MaxInterface
     public Integer max(Integer[] list) {
         Integer max = list[0];
