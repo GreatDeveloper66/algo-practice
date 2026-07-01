@@ -1,5 +1,7 @@
 package com.adamshaffer;
 
+import java.util.Objects;
+
 public class PriceList implements ListCalculationsInterface {
 
     private Integer[] list;
@@ -78,7 +80,7 @@ public class PriceList implements ListCalculationsInterface {
         for (int i = 0; i < list.length; i++) {
             Integer count = 0;
             for (int j = 0; j < list.length; j++) {
-                if (list[i] == list[j]) {
+                if (Objects.equals(list[i], list[j])) {
                     count++;
                 }
             }
@@ -102,6 +104,18 @@ public class PriceList implements ListCalculationsInterface {
             }
         }
         return list;
+    }
+
+    public void removeElement(int min) {
+        Integer[] newList = new Integer[list.length - 1];
+        int index = 0;
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] != min) {
+                newList[index] = list[i];
+                index++;
+            }
+        }
+        list = newList;
     }
 
 }
