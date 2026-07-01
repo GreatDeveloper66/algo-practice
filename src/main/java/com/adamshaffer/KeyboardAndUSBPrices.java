@@ -29,12 +29,14 @@ public class KeyboardAndUSBPrices {
         this.budget = budget;
     }
 
-    public Integer getMostExpensive() {
-        Integer keyboardPrice = keyboardPrices.getMin();
-        Integer usbPrice = usbPrices.getMin();
-        while(keyboardPrice + usbPrice < budget) {
-            
-        }
-        return keyboardPrice + usbPrice;
+    private PriceList EliminateCheapestInList(PriceList list) {
+        //remove the lowest price in the list
+        int min = list.getMin();
+        list.removeElement(min);
+        return list;
+    }
+
+    public Integer findMostExpensiveKeyboardAndUSBWithinBudget() {
+
     }
 }
