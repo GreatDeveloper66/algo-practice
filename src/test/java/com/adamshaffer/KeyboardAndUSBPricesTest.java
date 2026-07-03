@@ -6,5 +6,6 @@ public class KeyboardAndUSBPricesTest {
     private KeyboardAndUSBPrices keyboardAndUSBPrices;
     @BeforeEach
     public void setUp() throws Exception {
+        keyboardAndUSBPrices = new KeyboardAndUSBPrices(new PriceList(new Integer[]{40, 50, 60}), new PriceList(new Integer[]{5, 8, 9}), 60);
     }
 }
